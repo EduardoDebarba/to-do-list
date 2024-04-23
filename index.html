@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <title>To Do List</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Tarefas</h1>
+        <form id="todo-form">
+            <h4>Adicionar Tarefa</h4>
+            <div class="form-control">
+                <input type="text" class="todo-input" placeholder="Digite sua Tarefa">
+                <button type="submit"><img src="./src/images/icons/icon-soma.png" alt=""></button>
+            </div>
+        </form>
+        <!-- <form id="edit-form">
+            <p>Edite sua Tarefa</p>
+            <div class="form-control">
+                <input type="text" id="edit-input">
+                <button type="submit"><img src="./src/images/icons/icon-check.png" alt=""></button>
+            </div>
+            <button id="cancel-edit-btn">Cancelar</button>
+        </form> -->
+        <div id="toolbar">
+            <div class="search">
+                <h4>Pesquisar:</h4>
+                <form action="">
+                    <input type="text" id="search-input" placeholder="Buscar">
+                    <button id="erase-btn"><img src="./src/images/icons/icon-eraser.png" alt=""></button>
+                </form>
+            </div>
+            <div class="filter">
+                <h4>Filtrar:</h4>
+                <select name="" id="filter-select">
+                    <option value="all">Todos</option>
+                    <option value="done">Feitos</option>
+                    <option value="todo">A Fazer</option>
+                </select>
+            </div>
+        </div>
+        <div class="todo-list">
+            <div class="todo">
+                <h3>Estou fazendo alguuma coisa...</h3>
+                <button class="finish-todo">
+                    <img src="./src/images/icons/icon-check.png" alt="">
+                </button>
+                <button class="edit-todo">
+                    <img src="./src/images/icons/icon-lápis.png" alt="">
+                </button>
+                <button class="remove-todo">
+                    <img src="./src/images/icons/icon-x.png" alt="">
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="./src/js/script.js"></script>
+</body>
+</html>

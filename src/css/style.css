@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(/src/images/background-image.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container{
+    background-color: #fff;
+    width: 40%;
+    padding: 2rem;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+.container h1{
+    text-align: center;
+}
+
+#todo-form{
+    /* background-color: red; */
+    /* padding: 1rem; */
+}
+
+#todo-form p{
+    margin-bottom: 1rem;
+}
+#todo-form .form-control{
+    /* background-color: blue; */
+    display: flex;
+    gap: .5rem;
+}
+
+input{
+    width: 30%;
+    height: 2rem;
+}
+
+button{
+    width: 5%;
+    cursor: pointer;
+}
+
+button img{
+    width: 100%;
+}
+
+#toolbar{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+#toolbar .search{
+    background-color: red;
+    /* margin-top: 1rem; */
+}
+
+#toolbar .search form #search-input{
+    width: 60%;
+}
+
+#toolbar .search form #erase-btn{
+    width: 10%;
+    padding: 0;
+}
+
+h4{
+    margin-bottom: .5rem;
+    font-size: 1.2rem;
+}
+
+.todo-list{
+    background-color: blue;
+    /* display: flex;
+    flex-direction: row; */
+}
+
+.todo-list .todo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.todo-list .todo button{
+    width: 20%;
+}
+
+.todo-list .todo button img{
+    width: 30%;
+}
+
+
+
+
