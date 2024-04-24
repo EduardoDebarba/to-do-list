@@ -1,61 +1,109 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./src/css/style.css">
-    <title>To Do List</title>
-</head>
-<body>
-    <div class="container">
-        <h1>Lista de Tarefas</h1>
-        <form id="todo-form">
-            <h4>Adicionar Tarefa</h4>
-            <div class="form-control">
-                <input type="text" class="todo-input" placeholder="Digite sua Tarefa">
-                <button type="submit"><img src="./src/images/icons/icon-soma.png" alt=""></button>
-            </div>
-        </form>
-        <!-- <form id="edit-form">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./src/css/style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+			integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+			rel="stylesheet"
+		/>
+		<title>To Do List</title>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Lista de Tarefas</h1>
+			<form id="todo-form">
+				<h4>Adicionar Tarefa</h4>
+				<div class="form-control">
+					<input
+						type="text"
+						class="todo-input"
+						placeholder="Digite sua Tarefa"
+					/>
+					<button type="submit" class="addList">
+						<i class="fa-thin fa-plus"></i>
+					</button>
+				</div>
+			</form>
+			<!-- <form id="edit-form">
             <p>Edite sua Tarefa</p>
             <div class="form-control">
                 <input type="text" id="edit-input">
-                <button type="submit"><img src="./src/images/icons/icon-check.png" alt=""></button>
+                <button type="submit"><i class="fa-solid fa-check-double"></i></button>
             </div>
             <button id="cancel-edit-btn">Cancelar</button>
         </form> -->
-        <div id="toolbar">
-            <div class="search">
-                <h4>Pesquisar:</h4>
-                <form action="">
-                    <input type="text" id="search-input" placeholder="Buscar">
-                    <button id="erase-btn"><img src="./src/images/icons/icon-eraser.png" alt=""></button>
-                </form>
-            </div>
-            <div class="filter">
-                <h4>Filtrar:</h4>
-                <select name="" id="filter-select">
-                    <option value="all">Todos</option>
-                    <option value="done">Feitos</option>
-                    <option value="todo">A Fazer</option>
-                </select>
-            </div>
-        </div>
-        <div class="todo-list">
-            <div class="todo">
-                <h3>Estou fazendo alguuma coisa...</h3>
-                <button class="finish-todo">
-                    <img src="./src/images/icons/icon-check.png" alt="">
-                </button>
-                <button class="edit-todo">
-                    <img src="./src/images/icons/icon-lápis.png" alt="">
-                </button>
-                <button class="remove-todo">
-                    <img src="./src/images/icons/icon-x.png" alt="">
-                </button>
-            </div>
-        </div>
-    </div>
-    <script src="./src/js/script.js"></script>
-</body>
+			<div id="toolbar">
+				<div class="search">
+					<h4>Pesquisar:</h4>
+					<form action="">
+						<input type="text" id="search-input" placeholder="Buscar" />
+						<button id="erase-btn">
+							<i class="fa-solid fa-delete-left"></i>
+						</button>
+					</form>
+				</div>
+				<div class="filter">
+					<h4>Filtrar:</h4>
+					<select name="" id="filter-select">
+						<option value="all">Todos</option>
+						<option value="done">Feitos</option>
+						<option value="todo">A Fazer</option>
+					</select>
+				</div>
+			</div>
+			<div class="todo-list">
+				<div class="todo">
+					<h3>
+						Fazer o tema de caa alem de ir no mercado comprar batata ale tambem
+						ir no churrasco.
+					</h3>
+					<button class="finish-todo">
+						<i class="fa-solid fa-check"></i>
+					</button>
+					<button class="edit-todo">
+						<i class="fa-solid fa-pen"></i>
+					</button>
+					<button class="remove-todo">
+						<i class="fa-solid fa-xmark"></i>
+					</button>
+				</div>
+				<div class="todo">
+					<h3>Ir no mercado</h3>
+					<button class="finish-todo">
+						<i class="fa-solid fa-check"></i>
+					</button>
+					<button class="edit-todo">
+						<i class="fa-solid fa-pen"></i>
+					</button>
+					<button class="remove-todo">
+						<i class="fa-solid fa-xmark"></i>
+					</button>
+				</div>
+				<div class="todo">
+					<h3>Estou fazendo alguuma coisa para fazer o teste</h3>
+					<button class="finish-todo">
+						<i class="fa-solid fa-check"></i>
+					</button>
+					<button class="edit-todo">
+						<i class="fa-solid fa-pen"></i>
+					</button>
+					<button class="remove-todo">
+						<i class="fa-solid fa-xmark"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+		<script src="./src/js/script.js"></script>
+	</body>
 </html>
