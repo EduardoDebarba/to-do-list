@@ -1,28 +1,112 @@
 const todo = document.querySelector(".todo");
-const todoList = document.querySelector('.todo-list')
+const todoList = document.querySelector(".todo-list");
+
+// Definir o preventDafaul
+
+const formTodo = document.querySelector("#todo-form");
+formTodo.addEventListener("submit", (ev) => {
+	ev.preventDefault();
+});
 
 // Adicionar uma nova tarefa
 const btnAdd = document.querySelector(".addList");
-btnAdd.addEventListener("click", () => {
+btnAdd.addEventListener("click", addNewTask);
+
+function addNewTask() {
 	const inputAddValue = document.querySelector(".todo-input").value;
-    todoList.appendChild(inputAddValue)
-	
-});
+	const newH3 = document.createElement("h3");
+	newH3.textContent = inputAddValue;
+
+	const newTodoDiv = document.createElement("div");
+	newTodoDiv.classList.add("todo");
+
+	newTodoDiv.appendChild(newH3); // Adiciono meu h3 na div
+	todoList.appendChild(newTodoDiv); // Adiciono minha nva div na div todo-list
+
+	// Crio meu botão de finish e elemento i e coloco suas respectivas classes
+	const newBtnFinish = document.createElement("button");
+	newBtnFinish.classList.add("finish-todo");
+	const newIFinish = document.createElement("i");
+	newIFinish.classList.add("fa-check");
+	newIFinish.classList.add("fa-solid");
+
+	// Adiciono um ouvinte de evento ao botão de finalização da task
+	newBtnFinish.addEventListener("click", () => {
+		finishTask(newTodoDiv);
+	});
+
+	// Crio meu botão de edit e elemento i e coloco suas respectivas classes
+	const newBtnEdit = document.createElement("button");
+	newBtnEdit.classList.add("edit-todo");
+	const newIEdit = document.createElement("i");
+	newIEdit.classList.add("fa-pen");
+	newIEdit.classList.add("fa-solid");
+
+	// Adiciono um ouvinte de evento ao botão de edição da task
+	newBtnEdit.addEventListener("click", () => {
+		editTask(newTodoDiv);
+	});
+
+	// Crio meu botão de remove e elemento i e coloco suas respectivas classes
+	const newBtnRemove = document.createElement("button");
+	newBtnRemove.classList.add("remove-todo");
+	const newIRemove = document.createElement("i");
+	newIRemove.classList.add("fa-xmark");
+	newIRemove.classList.add("fa-solid");
+
+	// Adiciono um ouvinte de evento ao botão de remoção da task
+	newBtnRemove.addEventListener("click", () => {
+		removeTask(newTodoDiv);
+	});
+
+	// Adiciono o elemento i em cada botão
+	newBtnFinish.appendChild(newIFinish);
+	newBtnEdit.appendChild(newIEdit);
+	newBtnRemove.appendChild(newIRemove);
+
+	// Adiciono meus botões na div
+	newTodoDiv.append(newBtnFinish, newBtnEdit, newBtnRemove);
+
+	document.querySelector(".todo-input").value = "";
+}
 
 // Pesquisar pelo nome nas tarefas listadas
+function searchTask() {
+	
+}
 
 // Filtrar as tarefas
+function filterTasks() {
+	const selectedOption = document.getElementById("filter-select").value;
+	const taskItems = document.querySelectorAll(".todo");
+
+	taskItems.forEach((taskItem) => {
+		if (
+			selectedOption === "all" ||
+			(selectedOption === "done" && taskItem.classList.contains("done")) ||
+			(selectedOption === "todo" && !taskItem.classList.contains("done"))
+		) {
+			taskItem.style.display = "flex";
+		} else {
+			taskItem.style.display = "none";
+		}
+	});
+}
+
+// Adicionar um ouvinte de evento ao select para filtrar as tarefas quando uma nova opção é selecionada
+document
+	.getElementById("filter-select")
+	.addEventListener("change", filterTasks);
 
 // Marcar como feita a tarefa
-const btnCheck = document.querySelector(".finish-todo");
-btnCheck.addEventListener("click", () => {
+function finishTask(todo) {
 	todo.classList.add("done");
-});
+}
 
 // Editar a tarefa
+function editTask(todo) {}
 
 // Remover a tarefa da lista
-const btnRemove = document.querySelector(".remove-todo");
-btnRemove.addEventListener("click", () => {
+function removeTask(todo) {
 	todo.remove();
-});
+}

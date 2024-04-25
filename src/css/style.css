@@ -60,6 +60,30 @@ button img{
     width: 100%;
 }
 
+.none{
+    display: none;
+}
+
+#edit-form h4{
+    margin-top: 1rem;
+}
+
+#edit-form .form-control #edit-input{
+    margin-top: .5rem;
+    padding: 1rem;
+}
+
+#edit-form .form-control button{
+    height: 2rem;
+    width: 8%;
+}
+
+#edit-form #cancel-edit-btn{
+    width: 20%;
+    padding: .5rem;
+    margin-top: 1rem;
+}
+
 #toolbar{
     display: flex;
     justify-content: space-between;
@@ -97,13 +121,9 @@ h4{
 }
 
 .todo-list{
-    /* background-color: blue; */
     margin-top: 1rem;
-    /* padding: 1rem; */
     max-height: 45vh;
     overflow-y: auto;
-    /* border-radius: 10px; */
-    /* border-bottom: 1px solid #ddd; */
 }
 
 .todo-list .todo{
