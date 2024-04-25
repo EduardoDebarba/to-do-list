@@ -70,9 +70,37 @@ function addNewTask() {
 	document.querySelector(".todo-input").value = "";
 }
 
-// Pesquisar pelo nome nas tarefas listadas
+// Adicione um evento de input ao campo de pesquisa
+const searchInput = document.querySelector("#search-input");
+searchInput.addEventListener("input", searchTask);
+
+// Função para pesquisar tarefas
 function searchTask() {
-	
+	const searchText = searchInput.value.toLowerCase();
+	const taskItems = document.querySelectorAll(".todo");
+
+	taskItems.forEach((taskItem) => {
+		const taskText = taskItem.querySelector("h3").textContent.toLowerCase();
+		if (taskText.includes(searchText)) {
+			taskItem.style.display = "flex";
+		} else {
+			taskItem.style.display = "none";
+		}
+	});
+}
+
+const eraseBtn = document.querySelector("#erase-btn");
+eraseBtn.addEventListener("click", function (ev) {
+	ev.preventDefault();
+	eraseLastLetter();
+});
+
+// Função para excluir a última letra do campo de pesquisa
+function eraseLastLetter() {
+	const currentText = searchInput.value;
+	const newText = currentText.slice(0, -1);
+	searchInput.value = newText;
+	searchTask();
 }
 
 // Filtrar as tarefas
@@ -100,13 +128,42 @@ document
 
 // Marcar como feita a tarefa
 function finishTask(todo) {
-	todo.classList.add("done");
+	todo.classList.toggle("done");
 }
-
-// Editar a tarefa
-function editTask(todo) {}
 
 // Remover a tarefa da lista
 function removeTask(todo) {
 	todo.remove();
 }
+
+// Editar a tarefa
+function editTask(todo) {
+	const todoText = todo.querySelector("h3").textContent;
+	const editInput = document.querySelector("#edit-input");
+
+	// Preenche o campo de edição com o texto da tarefa
+	editInput.value = todoText;
+
+	document.getElementById("todo-form").classList.add("none");
+	document.getElementById("edit-form").classList.remove("none");
+
+	document.getElementById("edit-form").addEventListener("submit", (event) => {
+		event.preventDefault();
+		const newText = editInput.value.trim(); // Obtém o novo texto da tarefa
+
+		if (newText !== "") {
+			todo.querySelector("h3").textContent = newText;
+			document.getElementById("edit-form").classList.add("none");
+			document.getElementById("todo-form").classList.remove("none");
+		}
+	});
+}
+
+// Adiciona um ouvinte de evento ao botão de cancelar edição
+document
+	.getElementById("cancel-edit-btn")
+	.addEventListener("click", (event) => {
+		event.preventDefault();
+		document.getElementById("edit-form").classList.add("none");
+		document.getElementById("todo-form").classList.remove("none");
+	});
