@@ -3,23 +3,19 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: "Roboto", sans-serif;
+	color: #002333;
 }
 
 body {
-	background-image: url(/src/images/background-image.jpg);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	height: 90vh;
+	background-color: #159a9c;
 }
 
 .container {
-	background-color: #fff;
+	background-color: #b4bec9;
 	width: 35%;
 	padding: 2rem;
 	margin: 3rem auto;
 	border-radius: 15px;
-	max-height: 90vh;
 }
 
 .container h1 {
@@ -51,11 +47,17 @@ body {
 input {
 	width: 30%;
 	height: 2rem;
+	border-radius: 5px;
+	border-style: none;
 }
 
 button {
 	width: 5%;
+	height: 2rem;
 	cursor: pointer;
+	background-color: #deefe7;
+	border-radius: 5px;
+	border-style: none;
 }
 
 button img {
@@ -120,6 +122,8 @@ h4 {
 	width: 90%;
 	height: 2.4rem;
 	padding: 0.5rem;
+	border-radius: 5px;
+	border-style: none;
 }
 
 .todo-list {
@@ -149,7 +153,7 @@ h4 {
 }
 
 .todo-list::-webkit-scrollbar {
-	width: 0; /* Torna a barra de rolagem invisível */
+	width: 0;
 }
 
 .done h3 {
